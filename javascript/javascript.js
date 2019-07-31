@@ -19,7 +19,7 @@ function populateButtons(searchArray, classToAdd, areaToAddTo) {
 $(document).on('click', '.searchButton', function () {
     var type = $(this).data('type');
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&limit=15&api_key=Xg1HXO8hZPWBeO1qxZp5fsNYpgz77s1z"
-    $.ajax({ URL = queryURL, method = 'GET' })
+    $.ajax({ URL: queryURL, method: 'GET' })
         .done(function (response) {
             for (var i = 0; i < response.data.length; i++) {
                 var searchDiv = $('<div class = "search-item">');
