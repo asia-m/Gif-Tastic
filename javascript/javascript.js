@@ -15,9 +15,12 @@ function populateButtons(searchArray, classToAdd, areaToAddTo) {
         $(areaToAddTo).append(a);
     }
 }
-
+function displayGifs() {
+    var animal = $(this).attr("data-name")
+};
 $(document).on('click', '.searchButton', function () {
     var type = $(this).data('type');
+
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&limit=15&api_key=Xg1HXO8hZPWBeO1qxZp5fsNYpgz77s1z"
     $.ajax({ URL: queryURL, method: 'GET' })
         .done(function (response) {
@@ -47,7 +50,7 @@ $(document).on('click', '.searchButton', function () {
 
 $('#addSearch').on('click', function () {
     var newSearch = $('input').eq(0).val();
-
+    searchArray.push(searchArray, 'searchButton', '#buttonsArea');
+    return false;
 })
 
-18.37
